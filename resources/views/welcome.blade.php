@@ -70,8 +70,8 @@
                               <td>{{$item->padre}}</td>
                               <td>{{$item->madre}}</td>
                               <td>{{$item->tipo}}</td>
-                              <td>{{$item->cantidad}}</td>
                               <td>{{$item->raza}}</td>
+                              <td>{{$item->cantidad}}</td>
                              
                               <td>
                                 <div class="d-flex justify-content-around">
