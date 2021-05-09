@@ -22,7 +22,7 @@ class CreateReproductoresTable extends Migration
             $table->string('padre_madre');
             $table->string('madre_padre');
             $table->string('madre_madre');
-            $table->enum('raza', ['Angus', 'Chianina', 'Holstein']);
+            $table->enum('raza', ['Pardo', 'Guzerat', 'Sindhi']);
             $table->enum('tipo', ['Toro', 'Semen']);
             $table->integer('cantidad');
             $table->timestamps();

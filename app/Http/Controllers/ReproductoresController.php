@@ -12,19 +12,19 @@ class ReproductoresController extends Controller
 
         $reproductores = Reproductores::all();
 
-        return view('welcome', compact('reproductores'));
+        return view('reproductores.welcome', compact('reproductores'));
     }
 
     public function show($id){
 
         $data = Reproductores::find($id);
 
-        return view('show', compact('data'));
+        return view('reproductores.show', compact('data'));
     }
 
     public function create(){
 
-        return view('create');
+        return view('reproductores.create');
     }
 
     public function store(Request $request){
@@ -51,7 +51,7 @@ class ReproductoresController extends Controller
 
         $data = Reproductores::find($id);
 
-        return view('edit', compact('data'));
+        return view('reproductores.edit', compact('data'));
     }
 
     public function update(Request $request , $id){
@@ -75,7 +75,6 @@ class ReproductoresController extends Controller
     }
 
     public function delete(Request $request){
-
 
         $data = Reproductores::find($request->id);
         $data->delete();
