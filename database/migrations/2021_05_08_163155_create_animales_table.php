@@ -23,17 +23,17 @@ class CreateAnimalesTable extends Migration
             $table->integer('id_madre');
             $table->date('fecha_nacimiento');
             $table->decimal('peso_nacimiento',4,2);
-            $table->date('fecha_destete')->nullable();
-            $table->decimal('peso_destete',5,2)->nullable();
+            // $table->date('fecha_destete')->nullable();
+            // $table->decimal('peso_destete',5,2)->nullable();
             $table->date('fecha_compra')->nullable();
             $table->date('fecha_salida')->nullable();
-            $table->tinyinteger('tipo_salida')->nullable();
+            $table->enum('tipo_salida',['Descarte', 'Matadero','Muerte','Enfermedad'])->nullable();
             $table->text('comentario_salida')->nullable();
             $table->enum('raza', ['Pardo Aleman', 'F1 Pardo x Guzerat']);
             $table->enum('hato', ['Lechero', 'Carne','Doble proposito']);
             $table->enum('marca', ['XZ4', 'M8N']);
             $table->enum('capa', ['Parda', 'Blanca','Griz','Blanco', 'Rojo', 'Negro', 'Josco', 'Pintas']);
-            $table->integer('tipo_animal');
+            $table->enum('tipo_animal', ['Lechero Alta producción', 'Carnico', 'Doble proposito']);
             $table->timestamps();
         });
     }

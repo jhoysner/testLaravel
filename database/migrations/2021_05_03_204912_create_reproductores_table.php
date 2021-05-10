@@ -24,7 +24,6 @@ class CreateReproductoresTable extends Migration
             $table->string('madre_madre');
             $table->enum('raza', ['Pardo', 'Guzerat', 'Sindhi']);
             $table->enum('tipo', ['Toro', 'Semen']);
-            $table->integer('cantidad');
             $table->timestamps();
         });
     }

@@ -39,7 +39,6 @@ class ReproductoresController extends Controller
         $new->padre_padre = $request->padre_padre;
         $new->tipo = $request->tipo;
         $new->raza = $request->raza;
-        $new->cantidad = $request->cantidad;
         $new->save();
 
         Session::flash('message', 'Registro creado con exito');
@@ -66,7 +65,6 @@ class ReproductoresController extends Controller
         $data->padre_padre = $request->padre_padre;
         $data->tipo = $request->tipo;
         $data->raza = $request->raza;
-        $data->cantidad = $request->cantidad;
         $data->save();
 
         Session::flash('message', 'Registro actualizado');

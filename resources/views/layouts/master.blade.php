@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/master.css')}}" />
     <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-default.css" rel="stylesheet">
-    <script type="text/javascript" src="{{asset('js/zoomOnHover.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/zoomOnHover.css')}}"/>
+    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     @yield('stylesheets')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -24,8 +27,6 @@
 		@yield('content')
         @include('partials.footer')
     </div>
-    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>

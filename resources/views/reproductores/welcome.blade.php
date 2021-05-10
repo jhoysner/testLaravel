@@ -43,7 +43,6 @@
                       <th>Madre</th>
                       <th>Tipo</th>
                       <th>Raza</th>
-                      <th>Cantidad</th>
                       <th>Accion</th>
                     </tr>
                   </thead>
@@ -57,7 +56,6 @@
                       <td>{{$item->madre}}</td>
                       <td>{{$item->tipo}}</td>
                       <td>{{$item->raza}}</td>
-                      <td>{{$item->cantidad}}</td>
                     
                       <td>
                         <div class="d-flex justify-content-around">

@@ -32,10 +32,10 @@
                         <div class="row">
                           <div class="col-md-4">
 
-                              <div class="form-group">
+                              {{-- <div class="form-group">
                                   <label>Numero</label>
                                   <input type="text" class="form-control" name="numero" value="{{$data->numero}}" required>
-                              </div> 
+                              </div>  --}}
 
                               <div class="form-group">
                                 <label>Especie</label>
@@ -83,7 +83,7 @@
                               <input type="number" step="any" class="form-control" name="peso_nacimiento" value="{{$data->peso_nacimiento}}" required>
                           </div>
       
-                          <div class="form-group">
+                          {{-- <div class="form-group">
                             <label>Fecha Destete </label>
                             <input type="date" class="form-control" name="fecha_destete" value="{{$data->fecha_destete}}" required > 
                           </div>
@@ -91,7 +91,7 @@
                             <div class="form-group">
                               <label>Peso Destete</label>
                               <input type="number" step="any" class="form-control" name="peso_destete" value="{{$data->peso_destete}}" required>
-                            </div>
+                            </div> --}}
                             
                             <div class="form-group">
                                 <label>Fecha Compra </label>
@@ -103,9 +103,21 @@
                               <input type="date" class="form-control" name="fecha_salida"  value="{{$data->fecha_salida}}" required > 
                             </div>
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                               <label>Tipo Salida</label>
                               <input type="number" step="1" class="form-control" name="tipo_salida" value="{{$data->tipo_salida}}" required>
+                            </div> --}}
+
+
+                            <div class="form-group">
+                              <label>Tipo Salida</label>
+                              <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="tipo_salida">
+                                  <option value="{{$data->tipo_salida}}">{{$data->tipo_salida}}</option>
+                                  <option value="Descarte">Descarte</option>
+                                  <option value="Matadero">Matadero</option>
+                                  <option value="Muerte">Muerte</option>
+                                  <option value="Enfermedad">Enfermedad</option>
+                              </select>
                             </div>
 
                             <div class="form-group">
@@ -155,7 +167,12 @@
 
                               <div class="form-group mb-5">
                                   <label for="exampleInputEmail1">Tipo Animal </label>
-                                  <input type="text" class="form-control" name="tipo_animal" value="{{$data->tipo_animal}}" required>
+                                  <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="tipo_animal">
+                                    <option value="{{$data->tipo_animal}}">{{$data->tipo_animal}}</option>
+                                    <option value="Lechero Alta producción">Lechero Alta producción</option>
+                                    <option value="Carnico">Carnico</option>
+                                    <option value="Doble proposito">Doble proposito</option>
+                                </select>                              
                               </div>
           
                               <button type="submit" class="btn btn-success">Actualizar</button>

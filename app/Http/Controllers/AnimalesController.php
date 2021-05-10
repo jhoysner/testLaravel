@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Animales;
 use Illuminate\Http\Request;
+use App\Models\Reproductores;
 use Illuminate\Support\Facades\Session;
 
 class AnimalesController extends Controller
@@ -24,13 +25,16 @@ class AnimalesController extends Controller
 
     public function create(){
 
-        return view('animales.create');
+        $reproductores = Reproductores::all();
+        return view('animales.create', compact('reproductores'));
     }
 
     public function store(Request $request){
 
+
+        $last_id = Animales::latest()->first()->id;
         $new = new Animales;
-        $new->numero = $request->numero;
+        $new->numero =  $last_id + 1;
         $new->especie =  $request->especie;
         $new->nombre =  $request->nombre;
         $new->sexo =  $request->sexo;
@@ -38,8 +42,6 @@ class AnimalesController extends Controller
         $new->id_madre = $request->id_madre;
         $new->fecha_nacimiento = $request->fecha_nacimiento;
         $new->peso_nacimiento = $request->peso_nacimiento;
-        $new->fecha_destete = $request->fecha_destete;
-        $new->peso_destete =  $request->peso_destete;
         $new->fecha_compra  =  $request->fecha_compra;
         $new->fecha_salida   =  $request->fecha_salida;
         $new->tipo_salida  =  $request->tipo_salida;
@@ -67,7 +69,6 @@ class AnimalesController extends Controller
 
         // dd($request->all());
         $data = Animales::find($id);
-        $data->numero = $request->numero;
         $data->especie =  $request->especie;
         $data->nombre =  $request->nombre;
         $data->sexo =  $request->sexo;
@@ -75,8 +76,8 @@ class AnimalesController extends Controller
         $data->id_madre = $request->id_madre;
         $data->fecha_nacimiento = $request->fecha_nacimiento;
         $data->peso_nacimiento = $request->peso_nacimiento;
-        $data->fecha_destete = $request->fecha_destete;
-        $data->peso_destete =  $request->peso_destete;
+        // $data->fecha_destete = $request->fecha_destete;
+        // $data->peso_destete =  $request->peso_destete;
         $data->fecha_compra  =  $request->fecha_compra;
         $data->fecha_salida   =  $request->fecha_salida;
         $data->tipo_salida  =  $request->tipo_salida;

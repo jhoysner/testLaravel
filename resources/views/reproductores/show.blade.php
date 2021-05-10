@@ -72,9 +72,6 @@
                                                   <label style="font-weight:bold">Tipo : </label>{{$data->tipo}}
                                                 </li>
                                                 
-                                                <li class="list-group-item">
-                                                    <label style="font-weight:bold">Cantidad :</label> {{$data->cantidad}} 
-                                                </li>
                                                 
                                                 </ul>
                                             

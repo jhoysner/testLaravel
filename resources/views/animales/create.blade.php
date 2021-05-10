@@ -24,16 +24,16 @@
                     <div class="row">
                       <div class="container">
                         <h5  class="font-weight-bold">Animales Create</h5>
-                        <a href="{{route('animales')}}" class="btn btn-info mb-4">animales</a>
+                        <a href="{{route('animales')}}" class="btn btn-info mb-4">Animales</a>
                         <form action="{{route('animales.store')}}" method="POST">
                           @csrf
                           <div class="row">
                               <div class="col-md-4">
                               
-                                  <div class="form-group">
+                                  {{-- <div class="form-group">
                                       <label>Numero</label>
                                       <input type="text" class="form-control" name="numero" required>
-                                  </div> 
+                                  </div>  --}}
                                   <div class="form-group">
                                     <label>Especie</label>
                                     <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="especie">
@@ -60,11 +60,18 @@
                                       <input type="number" class="form-control" name="id_madre" required>
                                   </div>
               
-                                  <div class="form-group">
+                                  {{-- <div class="form-group">
                                       <label>ID Padre  </label>
                                       <input type="number" class="form-control" name="id_padre" required>
-                                  </div>    
-
+                                  </div>     --}}
+                                  <div class="form-group">
+                                    <label>ID Padre</label>
+                                    <select class="form-select form-select-lg mb-3 form-control js-example-basic-single"  aria-label=".form-select-lg example" name="id_padre" required>
+                                        @foreach ($reproductores as $item)
+                                          <option value="{{$item->id}}">{{$item->nombre}} -{{$item->id}}</option>
+                                        @endforeach
+                                    </select>
+                                  </div>
                                   <div class="form-group">
                                     <label>Fecha Nacimiento </label>
                                     <input type="date" class="form-control" name="fecha_nacimiento" required > 
@@ -80,16 +87,7 @@
                                   <input type="number" step="any" class="form-control" name="peso_nacimiento" required>
                               </div>
           
-                              <div class="form-group">
-                                <label>Fecha Destete </label>
-                                <input type="date" class="form-control" name="fecha_destete" required > 
-                            </div>
-        
-                                <div class="form-group">
-                                  <label>Peso Destete</label>
-                                  <input type="number" step="any" class="form-control" name="peso_destete" required>
-                                </div>
-                                
+       
                                 <div class="form-group">
                                     <label>Fecha Compra </label>
                                     <input type="date" class="form-control" name="fecha_compra" required > 
@@ -102,7 +100,12 @@
 
                                 <div class="form-group">
                                   <label>Tipo Salida</label>
-                                  <input type="number" step="1" class="form-control" name="tipo_salida" required>
+                                  <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="tipo_salida">
+                                      <option value="Descarte">Descarte</option>
+                                      <option value="Matadero">Matadero</option>
+                                      <option value="Muerte">Muerte</option>
+                                      <option value="Enfermedad">Enfermedad</option>
+                                  </select>
                                 </div>
 
                                 <div class="form-group">
@@ -148,7 +151,11 @@
 
                                   <div class="form-group mb-5">
                                       <label for="exampleInputEmail1">Tipo Animal </label>
-                                      <input type="text" class="form-control" name="tipo_animal">
+                                      <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="tipo_animal">
+                                        <option value="Lechero Alta producción">Lechero Alta producción</option>
+                                        <option value="Carnico">Carnico</option>
+                                        <option value="Doble proposito">Doble proposito</option>
+                                      </select>
                                   </div>
               
                                   <button type="submit" class="btn btn-success">Crear</button>
@@ -167,3 +174,10 @@
         
 @endsection
 
+@section('js')
+  <script>
+    $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+    });
+  </script>
+@endsection()

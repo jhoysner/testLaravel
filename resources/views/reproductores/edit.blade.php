@@ -88,10 +88,7 @@
                                     </select>
                                     
                                 </div>
-                                <div class="form-group mb-5">
-                                    <label for="exampleInputEmail1">Cantidad </label>
-                                    <input type="text" class="form-control" name="cantidad" value="{{$data->cantidad}}" >
-                                </div>
+                             
             
                                 <button type="submit" class="btn btn-success">Actualizar</button>
                                 

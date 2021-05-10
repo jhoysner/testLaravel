@@ -56,9 +56,9 @@
                                               <li class="list-group-item">                                    
                                                   <label style="font-weight:bold">Peso Nacimiento : </label> {{$data->peso_nacimiento}}
                                               </li>
-                                              <li class="list-group-item"> 
+                                              {{-- <li class="list-group-item"> 
                                                 <label style="font-weight:bold">Fecha Destete :</label> {{$data->fecha_destete}}
-                                              </li>
+                                              </li> --}}
                                               <li class="list-group-item">
                                                 <label style="font-weight:bold">Fecha Compra : </label> {{$data->fecha_compra}}
                                               </li>
