@@ -32,7 +32,15 @@ class AnimalesController extends Controller
     public function store(Request $request){
 
 
-        $last_id = Animales::latest()->first()->id;
+        $last_id = Animales::latest()->first();
+        if($last_id){
+            $last_id = $last_id->id;
+        }
+        else{
+            $last_id = 0;
+        }
+        // ->id;
+        // if($last_id)
         $new = new Animales;
         $new->numero =  $last_id + 1;
         $new->especie =  $request->especie;

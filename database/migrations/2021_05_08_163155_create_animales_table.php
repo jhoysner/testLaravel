@@ -22,7 +22,7 @@ class CreateAnimalesTable extends Migration
             $table->integer('id_padre');
             $table->integer('id_madre');
             $table->date('fecha_nacimiento');
-            $table->decimal('peso_nacimiento',4,2);
+            $table->decimal('peso_nacimiento');
             // $table->date('fecha_destete')->nullable();
             // $table->decimal('peso_destete',5,2)->nullable();
             $table->date('fecha_compra')->nullable();
