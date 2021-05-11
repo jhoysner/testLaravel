@@ -36,7 +36,7 @@
                                               <li class="list-group-item"> 
                                                   <label style="font-weight:bold">Nombre : </label> <span>{{$data->nombre}}</span></li>
                                               <li class="list-group-item">
-                                                  <label style="font-weight:bold">Numro :</label> {{$data->numero}}
+                                                  <label style="font-weight:bold">Numero :</label> {{$data->numero}}
                                               </li>
                                               <li class="list-group-item">                                    
                                                   <label style="font-weight:bold">Especie :</label> {{$data->especie}}
@@ -72,12 +72,12 @@
                                             <div class="card" style="width: 18rem;">
                                                 <ul class="list-group list-group-flush">
                                                 
-                                                  <li class="list-group-item">
+                                                  {{-- <li class="list-group-item">
                                                       <label style="font-weight:bold">Fecha Salida :</label> {{$data->fecha_salida}} 
                                                   </li>
                                                   <li class="list-group-item">
                                                       <label style="font-weight:bold">Comentario Salida :</label> {{$data->comentario_salida}} 
-                                                  </li>
+                                                  </li> --}}
                                                   <li class="list-group-item">
                                                       <label style="font-weight:bold">Raza :</label> {{$data->raza}} 
                                                   </li>

@@ -20,13 +20,15 @@ class AnimalesController extends Controller
 
         $data = Animales::find($id);
 
+
         return view('animales.show', compact('data'));
     }
 
     public function create(){
 
         $reproductores = Reproductores::all();
-        return view('animales.create', compact('reproductores'));
+        $madres =  Animales::where('sexo' , 'F')->get();
+        return view('animales.create', compact('reproductores' , 'madres'));
     }
 
     public function store(Request $request){
@@ -69,8 +71,10 @@ class AnimalesController extends Controller
     public function edit($id){
 
         $data = Animales::find($id);
+        $reproductores = Reproductores::all();
+        $madres =  Animales::where('sexo' , 'F')->get();
 
-        return view('animales.edit', compact('data'));
+        return view('animales.edit', compact('data','reproductores', 'madres'));
     }
 
     public function update(Request $request , $id){

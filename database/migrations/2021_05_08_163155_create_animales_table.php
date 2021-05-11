@@ -19,10 +19,10 @@ class CreateAnimalesTable extends Migration
             $table->enum('especie', ['Bovino', 'Caprino', 'Equino']);
             $table->string('nombre');
             $table->enum('sexo', ['F', 'M']);
-            $table->integer('id_padre');
-            $table->integer('id_madre');
-            $table->date('fecha_nacimiento');
-            $table->decimal('peso_nacimiento');
+            $table->integer('id_padre')->nullable();
+            $table->integer('id_madre')->nullable();
+            $table->date('fecha_nacimiento')->nullable();
+            $table->decimal('peso_nacimiento')->nullable();
             // $table->date('fecha_destete')->nullable();
             // $table->decimal('peso_destete',5,2)->nullable();
             $table->date('fecha_compra')->nullable();

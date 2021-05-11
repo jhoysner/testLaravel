@@ -61,14 +61,34 @@
                               </div>
 
                               <div class="form-group">
-                                  <label>ID Madre </label>
-                                  <input type="number" class="form-control" name="id_madre" value="{{$data->id_madre}}" required>
+                                <label>ID Madre</label>
+                                <select class="form-select form-select-lg mb-3 form-control js-example-basic-single"  aria-label=".form-select-lg example" name="id_madre" required>
+                                    @foreach ($madres as $item)
+                                     @if ($item->id == $data->id_madre)
+                                      <option value="{{$item->id}}">{{$item->nombre}} -{{$item->id}}</option>
+                                     @endif
+                                    @endforeach
+                                    <option>--------------</option>
+                                    @foreach ($madres as $item)
+                                      <option value="{{$item->id}}">{{$item->nombre}} -{{$item->id}}</option>
+                                     @endforeach
+                                </select>
                               </div>
-          
+
                               <div class="form-group">
-                                  <label>ID Padre  </label>
-                                  <input type="number" class="form-control" name="id_padre" value="{{$data->id_padre}}" required>
-                              </div>    
+                                <label>ID Padre</label>
+                                <select class="form-select form-select-lg mb-3 form-control js-example-basic-single"  aria-label=".form-select-lg example" name="id_padre" required>
+                                    @foreach ($reproductores as $item)
+                                     @if ($item->id == $data->id_padre)
+                                      <option value="{{$item->id}}">{{$item->nombre}} -{{$item->id}}</option>
+                                     @endif
+                                    @endforeach
+                                    <option>--------------</option>
+                                    @foreach ($reproductores as $item)
+                                      <option value="{{$item->id}}">{{$item->nombre}} -{{$item->id}}</option>
+                                     @endforeach
+                                </select>
+                              </div>
 
                               <div class="form-group">
                                 <label>Fecha Nacimiento </label>
@@ -83,76 +103,41 @@
                               <input type="number" step="any" class="form-control" name="peso_nacimiento" value="{{$data->peso_nacimiento}}" required>
                           </div>
       
-                          {{-- <div class="form-group">
-                            <label>Fecha Destete </label>
-                            <input type="date" class="form-control" name="fecha_destete" value="{{$data->fecha_destete}}" required > 
-                          </div>
-    
-                            <div class="form-group">
-                              <label>Peso Destete</label>
-                              <input type="number" step="any" class="form-control" name="peso_destete" value="{{$data->peso_destete}}" required>
-                            </div> --}}
                             
                             <div class="form-group">
                                 <label>Fecha Compra </label>
-                                <input type="date" class="form-control" name="fecha_compra" value="{{$data->fecha_compra}}" required > 
+                                <input type="date" class="form-control" name="fecha_compra" value="{{$data->fecha_compra}}" > 
                             </div>
 
                             <div class="form-group">
-                              <label>Fecha Salida </label>
-                              <input type="date" class="form-control" name="fecha_salida"  value="{{$data->fecha_salida}}" required > 
-                            </div>
-
-                            {{-- <div class="form-group">
-                              <label>Tipo Salida</label>
-                              <input type="number" step="1" class="form-control" name="tipo_salida" value="{{$data->tipo_salida}}" required>
-                            </div> --}}
-
-
-                            <div class="form-group">
-                              <label>Tipo Salida</label>
-                              <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="tipo_salida">
-                                  <option value="{{$data->tipo_salida}}">{{$data->tipo_salida}}</option>
-                                  <option value="Descarte">Descarte</option>
-                                  <option value="Matadero">Matadero</option>
-                                  <option value="Muerte">Muerte</option>
-                                  <option value="Enfermedad">Enfermedad</option>
+                              <label>Raza</label>
+                              <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="raza">
+                                  <option value="{{$data->raza}}">{{$data->raza}}</option>
+                                  <option value="Pardo Aleman">Pardo Aleman</option>
+                                  <option value="F1 Pardo x Guzerat">F1 Pardo x Guzerat</option>
                               </select>
-                            </div>
-
-                            <div class="form-group">
-                              <label for="exampleFormControlTextarea1">Comentario Salida</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario_salida" >{{$data->comentario_salida}}</textarea>
-                            </div>
+                          </div>
+                          <div class="form-group">
+                              <label>Hato</label>
+                              <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="hato">
+                                  <option value="{{$data->hato}}">{{$data->hato}}</option>
+                                  <option value="Lechero">Lechero</option>
+                                  <option value="Carne">Carne</option>
+                                  <option value="Doble Proposito">Doble Proposito</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label>Marca</label>
+                              <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="marca">
+                                  <option value="{{$data->marca}}">{{$data->marca}}</option>
+                                  <option value="XZ4">XZ4</option>
+                                  <option value="M8N">M8N</option>
+                              </select>
+                          </div>
                               
                           </div>
                           <div class="col-md-4">
 
-                              <div class="form-group">
-                                  <label>Raza</label>
-                                  <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="raza">
-                                      <option value="{{$data->raza}}">{{$data->raza}}</option>
-                                      <option value="Pardo Aleman">Pardo Aleman</option>
-                                      <option value="F1 Pardo x Guzerat">F1 Pardo x Guzerat</option>
-                                  </select>
-                              </div>
-                              <div class="form-group">
-                                  <label>Hato</label>
-                                  <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="hato">
-                                      <option value="{{$data->hato}}">{{$data->hato}}</option>
-                                      <option value="Lechero">Lechero</option>
-                                      <option value="Carne">Carne</option>
-                                      <option value="Doble Proposito">Doble Proposito</option>
-                                  </select>
-                              </div>
-                              <div class="form-group">
-                                  <label>Marca</label>
-                                  <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="marca">
-                                      <option value="{{$data->marca}}">{{$data->marca}}</option>
-                                      <option value="XZ4">XZ4</option>
-                                      <option value="M8N">M8N</option>
-                                  </select>
-                              </div>
                               <div class="form-group">
                                   <label>Capa</label>
                                   <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="capa">
@@ -194,3 +179,11 @@
         
 @endsection
 
+
+@section('js')
+  <script>
+    $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+    });
+  </script>
+@endsection()
