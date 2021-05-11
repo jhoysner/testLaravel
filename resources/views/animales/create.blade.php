@@ -75,7 +75,7 @@
 
                                   <div class="form-group">
                                     <label>Fecha Nacimiento </label>
-                                    <input type="date" class="form-control" name="fecha_nacimiento" required > 
+                                    <input type="date" class="form-control" name="fecha_nacimiento"> 
                                   </div>
                                   
                               </div>
@@ -85,7 +85,7 @@
         
                               <div class="form-group">
                                   <label>Peso Nacimiento</label>
-                                  <input type="number" step="any" class="form-control" name="peso_nacimiento" required>
+                                  <input type="number" step="any" class="form-control" name="peso_nacimiento">
                               </div>
           
        
