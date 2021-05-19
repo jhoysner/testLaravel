@@ -82,8 +82,6 @@ class ServiciosController extends Controller
         $reproductores = Reproductores::all();
         $madres =  Animales::where('sexo' , 'F')->get();
         $data = Servicio::findOrFail($id);
-
-        dump($data->hora_inseminacion);
         return view('servicios.edit', compact('reproductores' , 'madres','data'));
     }
 
