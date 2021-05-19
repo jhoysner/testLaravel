@@ -45,10 +45,10 @@
                                                   <label style="font-weight:bold">Sexo :</label> {{$data->sexo}}
                                               </li>
                                               <li class="list-group-item">                                    
-                                                  <label style="font-weight:bold">IDPadre :</label> {{$data->id_padre}}
+                                                  <label style="font-weight:bold">IDPadre :</label> {{$data->reproductor->nombre}}
                                               </li>
                                               <li class="list-group-item">                                    
-                                                  <label style="font-weight:bold">IDMadre : </label>{{$data->id_madre}}
+                                                  <label style="font-weight:bold">IDMadre : </label>{{$data->madre->nombre}}
                                               </li>
                                               <li class="list-group-item">                                    
                                                   <label style="font-weight:bold">Fecha Nacimiento : </label> {{$data->fecha_nacimiento}}

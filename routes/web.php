@@ -29,6 +29,14 @@ Route::get('animales-show/{id}', [App\Http\Controllers\AnimalesController::class
 Route::put('animales-update/{id}', [App\Http\Controllers\AnimalesController::class, 'update'])->name('animales.update');
 Route::post('animales-delete', [App\Http\Controllers\AnimalesController::class, 'delete'])->name('animales.delete');
 
+Route::get('/servicios', [App\Http\Controllers\ServiciosController::class, 'index'])->name('servicios');
+Route::post('servicios-store', [App\Http\Controllers\ServiciosController::class, 'store'])->name('servicios.store');
+Route::get('servicios-create', [App\Http\Controllers\ServiciosController::class, 'create'])->name('servicios.create');
+Route::get('servicios-edit/{id}', [App\Http\Controllers\ServiciosController::class, 'edit'])->name('servicios.edit');
+Route::get('servicios-show/{id}', [App\Http\Controllers\ServiciosController::class, 'show'])->name('servicios.show');
+Route::put('servicios-update/{id}', [App\Http\Controllers\ServiciosController::class, 'update'])->name('servicios.update');
+Route::post('servicios-delete', [App\Http\Controllers\ServiciosController::class, 'delete'])->name('servicios.delete');
+
 Auth::routes();
 
 Route::get('/', function () {

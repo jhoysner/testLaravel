@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reproductores extends Model
 {
     use HasFactory;
+
+
+
 }

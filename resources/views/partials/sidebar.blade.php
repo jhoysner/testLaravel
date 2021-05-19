@@ -13,6 +13,7 @@
                     <li><a href="{{route('home')}}"> <i class="fa fa-home"></i>Home</a></li>
                     <li><a href="{{route('reproductores')}}"> <i class="fa fa-plus"></i>Reproductores</a></li>
                     <li><a href="{{route('animales')}}"> <i class="fa fa-plus"></i>Animales</a></li>
+                    <li><a href="{{route('servicios')}}"> <i class="fa fa-plus"></i>Servicios</a></li>
                    
                 </ul>
             </li> 
