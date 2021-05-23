@@ -21,7 +21,9 @@ class CreateServiciosTable extends Migration
             $table->integer('id_reproductor')->nullable();
             $table->enum('inseminador',['Hans', 'Walter Colono'])->nullable();
             $table->date('fecha_confirmacion')->nullable();
-            $table->string('responsable')->nullable();
+            $table->boolean('prenada')->nullable();
+            $table->text('comentario')->nullable();
+            $table->integer('id_responsable')->nullable();
             $table->timestamps();
         });
     }

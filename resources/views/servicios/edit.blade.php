@@ -91,13 +91,22 @@
                                 </select>
                               </div>
 
-                              <div class="form-group mb-5">
-                                  <label for="exampleInputEmail1">Resposanble </label>
-                                  <input type="text" class="form-control" name="responsable" required value="{{$data->responsable}}">
 
-                              </div>
+                            <div class="form-group">
+                                <label>Preñada</label>
+                                <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example" name="prenada">
+                                  <option value="{{$data->prenada}}"> {{$data->prenada ? 'Si' : 'No'}}</option>
+                                  <option value="1">Si</option>
+                                  <option value="0">No</option>
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Comentario</label>
+                                <textarea name="comentario" rows="5" cols="5" class="form-control" name="comentario">{{$data->comentario}}</textarea>
+                            </div>
           
-                              <button type="submit" class="btn btn-success">Crear</button>
+                            <button type="submit" class="btn btn-success">Actualizar</button>
                           </div>
                       </form>
                       </div>

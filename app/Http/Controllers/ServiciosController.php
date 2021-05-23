@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Reproductores;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class ServiciosController extends Controller
 {
@@ -43,6 +44,7 @@ class ServiciosController extends Controller
      */
     public function store(Request $request)
     {   
+
         $data = new Servicio;
 
         $data->id_animal = $request->id_animal;
@@ -50,8 +52,10 @@ class ServiciosController extends Controller
         $data->hora_inseminacion = $request->hora_inseminacion;
         $data->tipo_reproduccion = $request->tipo_reproduccion;
         $data->inseminador = $request->inseminador;
-        $data->responsable = $request->responsable;
-      
+        $data->id_responsable =  Auth::user()->id;
+        $data->prenada = $request->prenada;
+        $data->comentario = $request->comentario;
+
         $data->save();
 
         Session::flash('message', 'Registro creado');
@@ -100,7 +104,9 @@ class ServiciosController extends Controller
         $data->hora_inseminacion = $request->hora_inseminacion;
         $data->tipo_reproduccion = $request->tipo_reproduccion;
         $data->inseminador = $request->inseminador;
-        $data->responsable = $request->responsable;
+        $data->id_responsable =  Auth::user()->id;
+        $data->prenada = $request->prenada;
+        $data->comentario = $request->comentario;
       
         $data->save();
 
