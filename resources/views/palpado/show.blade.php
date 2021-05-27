@@ -14,9 +14,9 @@
                 <div class="box-body" style="">
                     <div class="row">
                         <div class="container">
-                            <h5  class="font-weight-bold">Servicio Detail</h5>
+                            <h5  class="font-weight-bold">Palpado Detail</h5>
 
-                            <a href="{{route('servicios')}}" class="btn btn-info mb-4">Servicios</a>
+                            <a href="{{route('palpados')}}" class="btn btn-info mb-4">Palpados</a>
                             <div class="box-body" style="">
                                 <div class="row">
                                   <div class="container">
@@ -26,18 +26,17 @@
                                           <div class="card" style="width: 18rem;">
                                               <ul class="list-group list-group-flush">
                                                 <li class="list-group-item"> 
-                                                    <label style="font-weight:bold">Animal : </label> <span> {{$data->animal->nombre}}</span></li>
-                                                <li class="list-group-item">
-                                                    <label style="font-weight:bold">Reproductor :</label> {{$data->reproductor->nombre}}
+                                                    <label style="font-weight:bold">Hembra : </label> <span> {{$data->hembra->nombre}}</span>
+                                                </li>
+
+                                                <li class="list-group-item">                                    
+                                                    <label style="font-weight:bold">Fecha : </label> {{$data->fecha}}
                                                 </li>
                                                 <li class="list-group-item">                                    
-                                                    <label style="font-weight:bold">Hora de Inseminacion : </label> {{$data->hora_inseminacion}}
+                                                    <label style="font-weight:bold">Metodo : </label> {{$data->metodo}}
                                                 </li>
                                                 <li class="list-group-item">                                    
-                                                    <label style="font-weight:bold">Tipo de Reproduccion : </label> {{$data->tipo_reproduccion}}
-                                                </li>
-                                                <li class="list-group-item">                                    
-                                                    <label style="font-weight:bold">Inseminador : </label> {{$data->inseminador}}
+                                                    <label style="font-weight:bold">Estado : </label> {{$data->estado}}
                                                 </li>
                                                 <li class="list-group-item">                                    
                                                     <label style="font-weight:bold">Resposanble : </label> {{$data->responsable->name}}
@@ -51,10 +50,9 @@
                                         <div class="col-md-6">
                                           <div class="card" style="width: 18rem;">
                                               <ul class="list-group list-group-flush">
-                                                <li class="list-group-item"> 
-                                                    <label style="font-weight:bold">Preñada : </label> <span> {{$data->prenada? 'Si' : 'No'}}</span></li>
+                                               
                                                 <li class="list-group-item">
-                                                    <label style="font-weight:bold">Comentario :</label> {{$data->comentario}}
+                                                    <label style="font-weight:bold">Diagnostico :</label> {{$data->diagnostico}}
                                                 </li>
                                               
                                               </ul>

@@ -33,7 +33,7 @@
                   </button>                
                 </div>
               @endif
-              <div class="x_content">
+              <div class="x_content table-responsive">
                 <table class="table table-striped table-bordered" id="products">
                   <thead class="thead-dark">
                     <tr>

@@ -4,14 +4,6 @@
 @section('content')
 <div class="content-wrapper">    
   <section class="content-header">
-    {{-- <h1>
-      Dashboard
-      <small>Control panel</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Dashboard</li>
-    </ol> --}}
   </section>
 
     <!-- Main content -->
@@ -22,8 +14,8 @@
             <div class="x_content">
               <div class="margin-bottom-40">
                 <!-- EMPIEZA TABLAS-->
-                <h5 class="font-weight-bold">Listado de Servicios</h5>
-                <a href="{{route('servicios.create')}}" class="btn btn-success mb-3">CREAR</a>
+                <h5 class="font-weight-bold">Listado de Palpado</h5>
+                <a href="{{route('palpados.create')}}" class="btn btn-success mb-3">CREAR</a>
               </div>
               @if(Session::has('message'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -34,15 +26,14 @@
                 </div>
               @endif
               <div class="x_content table-responsive">
-                <table class="table table-striped " id="products">
+                <table class="table table-striped table-bordered " id="products">
                   <thead class="thead-dark">
                     <tr>
                       <th>ID</th>
                       <th>Animal</th>
-                      <th>Hora inseminacion</th>
-                      <th>Reproductor</th>
-                      <th>Tipo</th>
-                      <th>Inseminador</th>
+                      <th>Fecha</th>
+                      <th>Metodo</th>
+                      <th>Estado</th>
                       <th>Action</th>
                  
                     </tr>
@@ -52,17 +43,16 @@
                     <tr>
                     
                       <td>{{$item->id}}</td>
-                      <td>{{$item->animal->nombre}}</td>
-                      <td>{{$item->hora_inseminacion}}</td>
-                      <td>{{$item->reproductor->nombre}}</td>
-                      <td>{{$item->tipo_reproduccion}}</td>
-                      <td>{{$item->inseminador}}</td>
+                      <td>{{$item->hembra->nombre}}</td>
+                      <td>{{$item->fecha}}</td>
+                      <td>{{$item->metodo}}</td>
+                      <td>{{$item->estado}}</td>
              
                     
                       <td>
                         <div class="d-flex justify-content-around">
-                          <a href="{{route('servicios.show',$item->id)}}" class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a> 
-                          <a href="{{route('servicios.edit',$item->id)}}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></a> 
+                          <a href="{{route('palpados.show',$item->id)}}" class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a> 
+                          <a href="{{route('palpados.edit',$item->id)}}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></a> 
                           <button type="button" class="btn btn-xs btn-danger delete" data-toggle="modal" data-target="#staticBackdrop"  data-id="{{$item->id}}">    
                             <i class="fa fa-trash" aria-hidden="true"></i>
                           </button>
@@ -97,7 +87,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="{{route('servicios.delete')}}" method="POST">
+          <form action="{{route('palpados.delete')}}" method="POST">
             @csrf
             <div class="modal-body">
               Confirmar eliminacion

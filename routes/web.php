@@ -45,6 +45,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('celos-show/{id}', [App\Http\Controllers\CelosController::class, 'show'])->name('celos.show');
     Route::put('celos-update/{id}', [App\Http\Controllers\CelosController::class, 'update'])->name('celos.update');
     Route::post('celos-delete', [App\Http\Controllers\CelosController::class, 'delete'])->name('celos.delete');
+
+    Route::get('/palpados', [App\Http\Controllers\PalpadoController::class, 'index'])->name('palpados');
+    Route::post('palpados-store', [App\Http\Controllers\PalpadoController::class, 'store'])->name('palpados.store');
+    Route::get('palpados-create', [App\Http\Controllers\PalpadoController::class, 'create'])->name('palpados.create');
+    Route::get('palpados-edit/{id}', [App\Http\Controllers\PalpadoController::class, 'edit'])->name('palpados.edit');
+    Route::get('palpados-show/{id}', [App\Http\Controllers\PalpadoController::class, 'show'])->name('palpados.show');
+    Route::put('palpados-update/{id}', [App\Http\Controllers\PalpadoController::class, 'update'])->name('palpados.update');
+    Route::post('palpados-delete', [App\Http\Controllers\PalpadoController::class, 'delete'])->name('palpados.delete');
 });
 
 Auth::routes();

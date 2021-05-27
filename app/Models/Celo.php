@@ -14,4 +14,10 @@ class Celo extends Model
     {
         return $this->hasOne(Animales::class, 'id', 'id_hembra');
     }
+
+    public function responsable()
+    {
+        return $this->hasOne(User::class, 'id', 'id_responsable');
+    }
+
 }

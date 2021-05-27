@@ -15,6 +15,7 @@
                     <li><a href="{{route('animales')}}"> <i class="fa fa-plus"></i>Animales</a></li>
                     <li><a href="{{route('servicios')}}"> <i class="fa fa-plus"></i>Servicios</a></li>
                     <li><a href="{{route('celos')}}"> <i class="fa fa-plus"></i>Celos</a></li>
+                    <li><a href="{{route('palpados')}}"> <i class="fa fa-plus"></i>Palpados</a></li>
                    
                 </ul>
             </li> 

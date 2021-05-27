@@ -33,7 +33,7 @@
                   </button>                
                 </div>
               @endif
-              <div class="x_content">
+              <div class="x_content table-responsive">
                 <table class="table table-striped table-bordered" id="products">
                   <thead class="thead-dark">
                     <tr>
@@ -44,7 +44,6 @@
                       <th>Especie</th>
                       <th>Raza</th>
                       <th>Marca</th>
-                      <th>Fecha. N</th>
                       <th>Accion</th>
                     </tr>
                   </thead>
@@ -59,7 +58,6 @@
                       <td>{{$item->especie}}</td>
                       <td>{{$item->raza}}</td>
                       <td>{{$item->marca}}</td>
-                      <td>{{$item->fecha_nacimiento}}</td>
                     
                       <td>
                         <div class="d-flex justify-content-around">

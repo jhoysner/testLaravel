@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Servicio extends Model
+class Palpado extends Model
 {
     use HasFactory;
 
+    protected $table = 'palpado';
 
-    public function reproductor()
-    {
-        return $this->hasOne(Reproductores::class, 'id', 'id_reproductor');
-    }
 
-    public function animal()
+    public function hembra()
     {
-        return $this->hasOne(Animales::class, 'id', 'id_animal');
+        return $this->hasOne(Animales::class, 'id', 'id_hembra');
     }
 
     public function responsable()
     {
         return $this->hasOne(User::class, 'id', 'id_responsable');
     }
-
 }
